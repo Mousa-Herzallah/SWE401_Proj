@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pronunciation Enhancer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#signin">Sign In</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Main Dashboard Container -->
+  <div class="container">
+    <h1>Pronunciation Enhancer</h1>
+    <p class="subtitle">Enhance your pronunciation skills with real-time feedback and playback.</p>
+
+    <!-- Pronunciation Check Feature -->
+    <input type="text" id="targetText" placeholder="Enter text to check pronunciation">
+    <button id="checkPronunciationButton">Check Pronunciation</button>
+    <div class="result">
+      <p>Recognition Result: <span id="result"></span></p>
+      <p>What You Said: <span id="spokenResult"></span></p>
+    </div>
+
+    <hr style="margin: 30px 0;">
+
+    <!-- Phonetic Playback Feature -->
+    <input type="text" id="playbackText" placeholder="Enter text to play pronunciation">
+    <select id="accentSelect">
+      <option value="en-US_MichaelV3Voice">American Accent</option>
+      <option value="en-GB_JamesV3Voice">British Accent</option>
+    </select>
+    <button id="playPronunciationButton">Play Pronunciation</button>
+  </div>
+    <!-- Footer Links -->
+    <div class="footer">
+      <a href="#home">Home</a> | 
+      <a href="#features">Features</a> | 
+      <a href="#tips">Tips</a> | 
+      <a href="#settings">Settings</a>
+    </div>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

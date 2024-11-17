@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pronunciation Enhancer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for the login form */
+        .form-container {
+            margin: auto;
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .form-container input {
+            width: calc(100% - 20px);
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #357abd;
+        }
+
+        .auth-toggle {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .auth-toggle a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        .auth-toggle a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="track_progress.html">Track Progress</a>
+        <a href="about_us.html">About Us</a>
+        <a href="login.html" class="login-link">Login</a>
+    </div>
+    
+
+    <!-- Main Login Container -->
+    <div class="container">
+        <h1 id="main-title">Login</h1>
+        <p id="subtitle">Access your personalized learning dashboard.</p>
+        <div class="form-container">
+            <form id="authForm">
+                <input type="text" id="username" placeholder="Enter your username" required>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <button type="submit" id="submitButton">Login</button>
+            </form>
+            <p class="auth-toggle" id="authToggle">
+                Don't have an account? <a href="#" id="toggleAuth">Sign up here</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 SayItRight. All rights reserved.</p>
+    </div>
+    
+    <script>
+        // Get references to DOM elements
+        const mainTitle = document.getElementById("main-title");
+        const subtitle = document.getElementById("subtitle");
+        const submitButton = document.getElementById("submitButton");
+        const authToggle = document.getElementById("authToggle");
+
+        // Single function to toggle between Login and Sign Up
+        function toggleAuthHandler(e) {
+            e.preventDefault(); // Prevent default link behavior
+
+            if (mainTitle.textContent === "Login") {
+                // Switch to Sign Up view
+                mainTitle.textContent = "Sign Up";
+                subtitle.textContent = "Create your personalized learning account.";
+                submitButton.textContent = "Sign Up";
+                authToggle.innerHTML = `Already have an account? <a href="#" id="toggleAuth">Sign in here</a>.`;
+            } else {
+                // Switch to Login view
+                mainTitle.textContent = "Login";
+                subtitle.textContent = "Access your personalized learning dashboard.";
+                submitButton.textContent = "Login";
+                authToggle.innerHTML = `Don't have an account? <a href="#" id="toggleAuth">Sign up here</a>.`;
+            }
+
+            // Reassign the event listener to the new toggle link
+            document.getElementById("toggleAuth").addEventListener("click", toggleAuthHandler);
+        }
+
+        // Attach event listener to the toggle link
+        document.getElementById("toggleAuth").addEventListener("click", toggleAuthHandler);
+    </script>
+</body>
+</html>

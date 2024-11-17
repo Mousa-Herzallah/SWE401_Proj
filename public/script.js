@@ -119,7 +119,7 @@ class Learner {
 }
 
 // Initialize the Learner class
-const learner = new Learner("user1", "John Doe");
+const learner = new Learner("user1", "Mohammed Sami");
 
 // Event listeners for the buttons
 document.getElementById('checkPronunciationButton').addEventListener('click', () => {

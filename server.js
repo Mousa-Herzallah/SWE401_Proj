@@ -94,7 +94,7 @@ class AIAnalyzer {
 }
 
 // === Example User Instance ===
-const learner = new User("1", "John Doe", "Learner");
+const learner = new User("1", "Mohammed Sami", "Learner");
 
 // === API Endpoints ===
 
@@ -117,6 +117,7 @@ app.post('/synthesize', async (req, res) => {
     res.status(500).send(err.message);
   }
 });
+
 
 // Speech Recognition Endpoint
 app.post('/recognize', (req, res) => {

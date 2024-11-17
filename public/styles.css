@@ -15,8 +15,17 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+
 }
 
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
 /* Navigation Bar */
 .navbar {
   width: 100%;
@@ -28,6 +37,22 @@ body {
   top: 0;
   z-index: 10;
 }
+form {
+  max-width: 400px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+
+  height: 25px;
+  background: #4caf50;
+  color: #fff;
+  text-align: center;
+}
 
 .navbar a {
   color: #fff;
@@ -37,7 +62,9 @@ body {
   font-weight: bold;
   transition: color 0.3s, transform 0.3s;
 }
-
+.navbar .login-link {
+  margin-left: auto; /* Push it to the right of the navbar */
+}
 .navbar a:hover {
   color: #ffdf5c;
   transform: scale(1.1);
@@ -67,7 +94,6 @@ body {
   }
 }
 
-/* Title */
 h1 {
   font-size: 2.5em;
   margin-bottom: 15px;

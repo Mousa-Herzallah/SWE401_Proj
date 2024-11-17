@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Track Progress - Pronunciation Enhancer</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="track_progress.html">Track Progress</a>
+        <a href="about_us.html">About Us</a>
+        <a href="login.html" class="login-link">Login</a>
+    </div>
+    
+
+    <!-- Main Progress Container -->
+    <div class="container">
+        <h1>Track Your Progress</h1>
+        <p class="subtitle">Visualize your improvement over time.</p>
+
+        <!-- Progress Summary -->
+        <section class="progress-summary">
+            <h2>Overall Progress</h2>
+            <div class="progress-bar" style="width: 75%;">75% Completed</div>
+        </section>
+
+        <!-- Interactive Graph -->
+        <section class="progress-graph">
+            <h2>Performance Over Time</h2>
+            <canvas id="progressChart"></canvas>
+        </section>
+
+        <!-- Detailed Sessions -->
+        <section class="progress-details">
+            <h2>Session Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Session ID</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="progressTable">
+                    <tr>
+                        <td>2024-11-09</td>
+                        <td>#104</td>
+                        <td>85%</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-10</td>
+                        <td>#105</td>
+                        <td>90%</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-11</td>
+                        <td>#106</td>
+                        <td>95%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 SayItRight. All rights reserved.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Progress Chart
+        const ctx = document.getElementById('progressChart');
+        const progressChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2024-11-09', '2024-11-10', '2024-11-11'], // Dates
+                datasets: [{
+                    label: 'Progress Score (%)',
+                    data: [85, 90, 95], // Corresponding scores
+                    borderColor: '#4a90e2',
+
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
